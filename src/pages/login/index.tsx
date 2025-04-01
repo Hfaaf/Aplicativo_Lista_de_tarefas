@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ActivityIndicator, Alert, Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { style } from "./styles";
 import { MaterialIcons, Octicons } from '@expo/vector-icons'
+import { useNavigation, NavigationProp } from "@react-navigation/core";
 
 import Logo from '../../assets/logo.png'
 import { themas } from "../../global/themes";
@@ -10,6 +11,8 @@ import { Input } from "../../components/input";
 import { Button } from "../../components/Button";
 
 export default function Login() {
+
+    const navigation = useNavigation<NavigationProp<any>>()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -23,20 +26,18 @@ export default function Login() {
             if (!email || !password) {
                 setLoading(false)
                 return Alert.alert('Atenção', 'informe todos os campos')
-            }
+            }   else if (email == 'heitorfariaspinheirodoamaral@gmail.com' && password == '13307955453Hf') {
+                setEmail('')
+                setPassword('')
 
-            setTimeout(() => {
-                if (email == 'heitorfariaspinheirodoamaral@gmail.com' && password == '13307955453Hf') {
-                    Alert.alert('logado com sucesso')
-                    setEmail('')
-                    setPassword('')
-                } else {
-                    Alert.alert('Usuario não encontrado!')
-                    setEmail('')
-                    setPassword('')
-                }
-                setLoading(false)
-            }, 3000)
+                navigation.navigate("BottomRoutes")
+
+            } else {
+                Alert.alert('Usuario não encontrado!')
+                setEmail('')
+                setPassword('')
+            }
+            setLoading(false)
 
         } catch (error) {
             console.log(error)
@@ -72,7 +73,7 @@ export default function Login() {
                     onChangeText={setPassword}
                     title="SENHA"
                     IconRight={Octicons}
-                    IconRightName={showPassword?"eye-closed":"eye"}
+                    IconRightName={showPassword ? "eye-closed" : "eye"}
                     secureTextEntry={showPassword}
                     onIconRightPress={() => setShowPassword(!showPassword)}
                 />
@@ -80,9 +81,9 @@ export default function Login() {
 
             <View style={style.boxBottom}>
                 <Button
-                text="ENTRAR"
-                loading={loading}
-                onPress={() => getLogin()}
+                    text="ENTRAR"
+                    loading={loading}
+                    onPress={() => getLogin()}
                 />
             </View>
             <Text style={{

@@ -12,7 +12,6 @@ export const style = StyleSheet.create({
     {
         height: Dimensions.get('window').height / 3,
         width: '100%',
-        //backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'center',
 
@@ -21,7 +20,6 @@ export const style = StyleSheet.create({
     {
         height: Dimensions.get('window').height / 4,
         width: '100%',
-        //backgroundColor: 'green',
         paddingHorizontal: 37,
     },
     boxBottom:
