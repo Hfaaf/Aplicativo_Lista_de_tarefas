@@ -3,29 +3,36 @@ import { themas } from "../../global/themes";
 
 export const style = StyleSheet.create({
 
-    button:
+    tabArea:
     {
-        width: 250,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: themas.colors.primary,
-        borderRadius: 40,
-        marginTop: 40,
-        shadowColor: '#000',
+        flexDirection: 'row',
+        height: 80,
+        justifyContent: 'space-around',
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 3,
+            height: 1,
         },
-        shadowOpacity: 0.29,
-        shadowRadius: 4.65,
-        elevation: 7,
+        shadowOpacity: 0.18,
+        shadowRadius: 1.00,
+        elevation: 1,
     },
-    textButton:
-    {
-        fontSize: 16,
-        color: 'white',
-        fontWeight: 'bold',
-    }
 
+    tabItem:
+    {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    tabItemButtom:
+    {
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999,
+        top: -30,
+        backgroundColor: themas.colors.primary
+    }
 })

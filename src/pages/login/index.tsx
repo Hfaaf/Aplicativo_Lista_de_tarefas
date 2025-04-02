@@ -26,12 +26,11 @@ export default function Login() {
             if (!email || !password) {
                 setLoading(false)
                 return Alert.alert('Atenção', 'informe todos os campos')
-            }   else if (email == 'heitorfariaspinheirodoamaral@gmail.com' && password == '13307955453Hf') {
+            }   else if (email == '@' && password == '.') {
                 setEmail('')
                 setPassword('')
 
-                navigation.navigate("BottomRoutes")
-
+                navigation.reset({routes:[{name:"BottomRoutes"}]})
             } else {
                 Alert.alert('Usuario não encontrado!')
                 setEmail('')

@@ -4,21 +4,21 @@ import { themas } from "../../global/themes";
 export const style = StyleSheet.create({
 
     boxInput:
-        {
-            width: "100%",
-            height: 40,
-            borderWidth: 1,
-            borderRadius: 40,
-            marginTop: 10,
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: 5,
-            backgroundColor: themas.colors.bgscreen,
-            borderColor: themas.colors.lightgray
-    
-    
-        },
-        input:
+    {
+        width: "100%",
+        height: 40,
+        borderWidth: 1,
+        borderRadius: 40,
+        marginTop: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 5,
+        backgroundColor: themas.colors.bgscreen,
+        borderColor: themas.colors.lightgray
+
+
+    },
+    input:
     {
         height: '100%',
         width: '90%',

@@ -7,8 +7,8 @@ import { style } from "./styles"
 import { themas } from "../../global/themes";
 
 type IconComponent = React.ComponentType<React.ComponentProps<typeof MaterialIcons>> |
-                     React.ComponentType<React.ComponentProps<typeof FontAwesome>> |
-                     React.ComponentType<React.ComponentProps<typeof Octicons>>
+    React.ComponentType<React.ComponentProps<typeof FontAwesome>> |
+    React.ComponentType<React.ComponentProps<typeof Octicons>>
 
 type Props = TextInputProps & {
     IconLeft?: IconComponent,
@@ -20,35 +20,29 @@ type Props = TextInputProps & {
     onIconRightPress?: () => void,
 }
 
-export const Input = forwardRef((Props:Props,ref: LegacyRef<TextInput> | null) => {
+export const Input = forwardRef((Props: Props, ref: LegacyRef<TextInput> | null) => {
 
-    const {IconLeft,IconRight,IconLeftName,IconRightName,title,onIconLeftPress,onIconRightPress, ...rest} = Props
+    const { IconLeft, IconRight, IconLeftName, IconRightName, title, onIconLeftPress, onIconRightPress, ...rest } = Props
     const calculateSizeWidth = () => {
-        if(IconLeft && IconRight )
-        {
+        if (IconLeft && IconRight) {
             return '80%'
         }
-        else if (IconLeft || IconRight) 
-        {
+        else if (IconLeft || IconRight) {
             return '90%'
         }
-        else
-        {
+        else {
             return '100%'
         }
     }
 
     const calculatePaddingLeft = () => {
-        if(IconLeft && IconRight )
-        {
+        if (IconLeft && IconRight) {
             return 15
         }
-        else if (IconLeft || IconRight) 
-        {
+        else if (IconLeft || IconRight) {
             return 15
         }
-        else
-        {
+        else {
             return 20
         }
     }
@@ -57,35 +51,35 @@ export const Input = forwardRef((Props:Props,ref: LegacyRef<TextInput> | null) =
         <>
             <Text style={style.titleInput}>{title}</Text>
             <View style={[
-                style.boxInput, {paddingLeft:calculatePaddingLeft()}
+                style.boxInput, { paddingLeft: calculatePaddingLeft() }
             ]}>
                 {IconLeft && IconLeftName && (
-                <TouchableOpacity onPress={onIconLeftPress} style={{width: '10%'}}>
-                    <IconLeft 
-                    name={IconLeftName as any} 
-                    size={20}
-                    color={themas.colors.gray}
-                    style={style.Icon}
-                />
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={onIconLeftPress} style={{ width: '10%' }}>
+                        <IconLeft
+                            name={IconLeftName as any}
+                            size={20}
+                            color={themas.colors.gray}
+                            style={style.Icon}
+                        />
+                    </TouchableOpacity>
                 )}
 
                 <TextInput
                     style={[
                         style.input,
-                        {width:calculateSizeWidth()}
+                        { width: calculateSizeWidth() }
                     ]}
                     {...rest}
                 />
                 {IconRight && IconRightName && (
-                <TouchableOpacity onPress={onIconRightPress} style={{width: '10%'}}>
-                    <IconRight 
-                    name={IconRightName as any} 
-                    size={20}
-                    color={themas.colors.gray}
-                    style={style.Icon}
-                />
-                </TouchableOpacity>
+                    <TouchableOpacity onPress={onIconRightPress} style={{ width: '10%' }}>
+                        <IconRight
+                            name={IconRightName as any}
+                            size={20}
+                            color={themas.colors.gray}
+                            style={style.Icon}
+                        />
+                    </TouchableOpacity>
                 )}
             </View>
         </>
