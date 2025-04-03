@@ -26,7 +26,7 @@ export default function Login() {
             if (!email || !password) {
                 setLoading(false)
                 return Alert.alert('Atenção', 'informe todos os campos')
-            }   else if (email == '@' && password == '.') {
+            }   else if (email == 'a' && password == 'a') {
                 setEmail('')
                 setPassword('')
 

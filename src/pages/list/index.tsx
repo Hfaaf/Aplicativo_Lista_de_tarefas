@@ -46,8 +46,8 @@ export default function List() {
                             color="red"
                         />
                         <View>
-                            <Text>{item.title}</Text>
-                            <Text>{item.description}</Text>
+                            <Text style={{fontWeight: 'bold'}}>{item.title}</Text>
+                            <Text style={{color: themas.colors.gray}}>{item.description}</Text>
                         </View>
                     </View>
                     <Flag 
